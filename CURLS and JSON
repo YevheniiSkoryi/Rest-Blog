@@ -1,0 +1,34 @@
+Examples of JSON:
+
+   REGISTRATION
+{"username":"user",
+ "lastName":"last",
+ "password":"12345",
+ "email":"user@mail.ru"
+}
+  NEW POST
+{"title":"MyTitle","body":"Post Body"}
+  EDIT POST
+{"title":"NewTitle","body":"Newter Body"}
+
+
+CURL FOR REGISTRATION
+curl -H "Content-Type: application/json" -X POST -d '{"username":"user1","lastName":"last1","password":"12345","email":"user1@mail.ru"}' http://localhost:9000/register
+
+CURL FOR SHOW ALL POSTS
+curl -u zhenya:12345 -X GET  http://localhost:9000/posts?own=false
+
+CURL FOR SHOW ZHENYA's POSTS
+curl -u zhenya:12345 -X GET  http://localhost:9000/posts?own=true
+
+CURL FOR CREATE NEW POST
+curl -u zhenya:12345 -H "Content-Type: application/json" -X POST -d '{"title":"MyTitle","body":"Post Body"}'  http://localhost:9000/posts
+
+CURL FOR GET THE NEW POST(id=8 --> it increses every time when you create a new post)
+curl -u zhenya:12345 -X GET  http://localhost:9000/posts/8
+
+CURL FOR EDIT POST(id=8)
+curl -u zhenya:12345 -H "Content-Type: application/json" -X PUT -d '{"title":"NewTitle","body":"Newter Body"}' http://localhost:9000/posts/8
+
+CURL FOR DELETE POST(id=8)
+curl -u zhenya:12345 -X DELETE  http://localhost:9000/posts/8

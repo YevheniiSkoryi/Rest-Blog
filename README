@@ -1,0 +1,6 @@
+For running the project open the command line and put next lines:
+mvn spring-boot:run
+
+For that you must have maven and jdk.
+
+Or open IDEA and import project there and run one. You will be gotten a server and be able to input curls in command line. 
